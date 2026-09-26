@@ -1,0 +1,130 @@
+{
+  "snapshot": "hyperframes-mac-render-reference-2026-09-26",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "0c064fb0d73114ebebb86ae625bf6ae95b1aab1d0ad9ce66dbcc70f9e28d6bd8",
+      "bytes": 76
+    },
+    {
+      "path": "AGENT-NOTE.md",
+      "sha256": "75aaed235e39f2fa06d4853b24fe2d34e4de8e903690d6bc0af15158f4d4e6ba",
+      "bytes": 2465
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "52d54d5e19ac073448d8bf93f5ab909d0494d05c6d04f9092351307597700a4c",
+      "bytes": 1068
+    },
+    {
+      "path": "README.md",
+      "sha256": "f337dde4c16f9a3c3b4be3d3f736503ffeb77a87ff5485974de865fc5820fb85",
+      "bytes": 13244
+    },
+    {
+      "path": "THIRD-PARTY.md",
+      "sha256": "9cd7266629c2d9dd1af44d907988d76def4f1911cfc94979ef34cd6d0aa905be",
+      "bytes": 1219
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "ea2bd5087705ee2c3020d52bf7405d0cf0fe573aa9ba8253d2b4630d94c6b1bc",
+      "bytes": 64936
+    },
+    {
+      "path": "package.json",
+      "sha256": "78f3fe99f349bc3653160e2d2ef25547c5f6fc5567afee24b5b6e53c77ea0a0c",
+      "bytes": 337
+    },
+    {
+      "path": "tools/mac-render/capture-tuning.mjs",
+      "sha256": "edf26ecdf8ddd540bb92bd57f52c5f71ff05b30d6e92520fe8da5799e1343297",
+      "bytes": 1184
+    },
+    {
+      "path": "tools/mac-render/capture-tuning.test.mjs",
+      "sha256": "c79ec97cd9862a1bb19ba58d0b1a7bb829181ee48c4de7d87e9d04705254d81c",
+      "bytes": 1721
+    },
+    {
+      "path": "tools/mac-render/dashboard/app.js",
+      "sha256": "b24fe7fc417edbf6ada04d0076fbcfbd47f707cd8ff89d1e5e8f5a795464822f",
+      "bytes": 17249
+    },
+    {
+      "path": "tools/mac-render/dashboard/index.html",
+      "sha256": "932e9a0aa5d9cc69ba32ab3bf55a86df647bb4150d85550c178d3504fc174c7a",
+      "bytes": 6623
+    },
+    {
+      "path": "tools/mac-render/dashboard/style.css",
+      "sha256": "9204afba608a2550059687ddce960ea2536b1736eab4aaccd1121a415f039fb3",
+      "bytes": 16815
+    },
+    {
+      "path": "tools/mac-render/dashboard.mjs",
+      "sha256": "6f54620206c381ca9f53e3c752921a171e5333410724e055df4da85cb9c15abc",
+      "bytes": 2032
+    },
+    {
+      "path": "tools/mac-render/dashboard.test.mjs",
+      "sha256": "6f99f9fd89ed4d0f86b77f95404efcb400bb20bdd14435ee16c95fc22a508648",
+      "bytes": 3371
+    },
+    {
+      "path": "tools/mac-render/e2e.sh",
+      "sha256": "a4b1689077980dee5375d0ea65188e8ca42a8446802c4c741e6e80ae1157bc45",
+      "bytes": 5807
+    },
+    {
+      "path": "tools/mac-render/render-args.mjs",
+      "sha256": "4de3bfa7a6e40171f432c28a3d474f6bfd920b66a52b214b57568ba001e359e1",
+      "bytes": 3647
+    },
+    {
+      "path": "tools/mac-render/render-args.test.mjs",
+      "sha256": "f489ed55834abbf2f9e2c6fecb9be9b9579f3465cef049f6c24c8a1b1c09ee40",
+      "bytes": 1857
+    },
+    {
+      "path": "tools/mac-render/sandbox.mjs",
+      "sha256": "732e0f451dba1d17483a3ddebe7b6d8af5205c4ef2f7d3c9719985ca71dcfe51",
+      "bytes": 10489
+    },
+    {
+      "path": "tools/mac-render/sandbox.test.mjs",
+      "sha256": "c44367caa57fa93eb96943add28a11abe13a12ee737dbafeb58eaac1abbf2f4f",
+      "bytes": 7320
+    },
+    {
+      "path": "tools/mac-render/server.mjs",
+      "sha256": "ead704bc30bffe14278c03c57305244dd2cdbd8fc9ba2c8668785aff565a8a3a",
+      "bytes": 63384
+    },
+    {
+      "path": "tools/mac-render/server.test.mjs",
+      "sha256": "a67b57224a7756e267bc40f4ef6611006eacd31681773061274872b4630b2476",
+      "bytes": 93141
+    },
+    {
+      "path": "tools/mac-render/setup-mac.sh",
+      "sha256": "c14b7c8a8e16d50168c0136c2ea940e5ec0c4574693a44a6d0849daba79e915e",
+      "bytes": 9668
+    },
+    {
+      "path": "tools/mac-render/setup-mac.test.mjs",
+      "sha256": "594c76df5bb142c90cad68e25e051e2f1f163158aeceb97ebd91000384e376e5",
+      "bytes": 11862
+    },
+    {
+      "path": "tools/setup/hyperframes-latest.sh",
+      "sha256": "f01121ada28bd41a56f1f3fcb7211026393fa9cf533cf49076196845b32114a7",
+      "bytes": 1418
+    },
+    {
+      "path": "tools/setup/node-runtime.sh",
+      "sha256": "b58ba54b46e93dcfbf255a9584205d31bbcfc572f8bfb01f29b63c1d7a858666",
+      "bytes": 1184
+    }
+  ]
+}

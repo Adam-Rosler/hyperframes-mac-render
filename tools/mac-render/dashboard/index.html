@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Render console</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to jobs</a>
+    <aside class="machine-rail" aria-label="Render machine">
+      <a class="brand" href="#main" aria-label="Render console home">
+        <svg viewBox="0 0 28 28" width="28" height="28" fill="none" aria-hidden="true"><path d="M4 7h15v15H4zM9 2h15v15" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span>Render console</span>
+      </a>
+      <div class="rail-section machine-identity">
+        <svg class="machine-icon" viewBox="0 0 32 32" width="32" height="32" fill="none" aria-hidden="true"><rect x="4" y="5" width="24" height="17" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M11 27h10M16 22v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <p class="machine-name" id="machine-name">This Mac</p>
+        <p class="machine-chip" id="machine-chip">Waiting for machine details</p>
+        <span class="rail-status" id="machine-state" data-state="connecting"><span class="status-dot"></span><span>Connecting</span></span>
+      </div>
+      <nav class="rail-nav" aria-label="Console">
+        <a href="#main" aria-current="page"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 8h14M8 8v9" stroke="currentColor" stroke-width="1.5"/></svg>Jobs</a>
+      </nav>
+      <dl class="machine-config">
+        <div><dt>HyperFrames</dt><dd id="renderer-version">Not connected</dd></div>
+        <div><dt>Encoding configuration</dt><dd id="gpu-config">Not connected</dd></div>
+        <div><dt>Queue capacity</dt><dd id="queue-capacity">Not connected</dd></div>
+      </dl>
+      <p class="rail-note">Local console<span>Read-only access on this Mac</span></p>
+    </aside>
+
+    <main id="main" tabindex="-1">
+      <header class="page-header">
+        <div><h1>Render jobs</h1><p>Live activity from your Mac render service.</p></div>
+        <div class="refresh-controls">
+          <div class="connection-meta"><span id="connection-status" class="connection-status" data-state="connecting" role="status"><span class="status-dot"></span><span>Connecting</span></span><span id="updated-at">Waiting for the first update</span></div>
+          <button id="refresh" class="button button-refresh" type="button" aria-label="Refresh"><svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M16 8a6.25 6.25 0 1 0 .1 4M16 3v5h-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Refresh</span></button>
+        </div>
+      </header>
+      <div id="connection-notice" class="connection-notice" role="status" hidden></div>
+      <div class="work-grid">
+        <section class="current-section" aria-labelledby="current-heading">
+          <div class="section-heading"><h2 id="current-heading">Current job</h2><span id="active-count" class="subtle-label">Connecting</span></div>
+          <div id="current-job" class="current-job"><div class="loading-state"><p>Loading current job…</p><div class="skeleton skeleton-title"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-short"></div></div></div>
+        </section>
+        <section class="queue-section" aria-labelledby="queue-heading">
+          <div class="section-heading"><h2 id="queue-heading">Queue <span id="queue-count" class="count-badge">Unknown</span></h2><span class="subtle-label">First in, first out</span></div>
+          <ol id="queue-list" class="queue-list"></ol>
+          <div id="queue-empty" class="queue-empty"><p>Loading queue…</p></div>
+        </section>
+      </div>
+      <section class="history-section" aria-labelledby="history-heading">
+        <div class="history-heading"><div><h2 id="history-heading">Recent jobs</h2><p id="history-summary">Loading job history…</p></div></div>
+        <div class="history-toolbar">
+          <div class="search-field"><label class="sr-only" for="job-search">Search recent jobs</label><svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="m13 13 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><input id="job-search" type="search" placeholder="Search by name or job ID" autocomplete="off"></div>
+          <div class="status-filter"><label for="status-filter">Status</label><select id="status-filter"><option value="all">All statuses</option><option value="completed">Completed</option><option value="failed">Failed</option></select></div>
+        </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Recent render jobs">
+          <table><thead><tr><th scope="col">Job</th><th scope="col">Status</th><th scope="col">Output</th><th scope="col">Render time</th><th scope="col">Finished</th></tr></thead><tbody id="history-rows"></tbody></table>
+          <div id="history-empty" class="history-empty"><p>Loading recent jobs…</p></div>
+        </div>
+        <p class="history-footnote">Showing finished jobs retained by this service. Select a job to inspect its details.</p>
+      </section>
+      <footer class="page-footer"><span>HyperFrames render service</span><span>One active render at a time</span></footer>
+    </main>
+
+    <dialog id="job-details" class="details-panel" aria-labelledby="details-title">
+      <div class="details-header"><h2 id="details-heading" tabindex="-1">Job details</h2><button id="close-details" class="icon-button" type="button" aria-label="Close job details"><svg viewBox="0 0 20 20" width="20" height="20" fill="none" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div>
+      <div id="details-connection" class="details-connection"><span id="details-connection-status" role="status">Connecting</span><span id="details-snapshot-time">Waiting for the first update</span></div>
+      <div id="details-content"></div>
+    </dialog>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+    <noscript><p class="noscript">Enable JavaScript to view the live render queue.</p></noscript>
+  </body>
+</html>
