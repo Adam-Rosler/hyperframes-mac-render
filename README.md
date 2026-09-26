@@ -2,7 +2,7 @@
 
 This reference snapshot implements the HTTP API used by stock `hyperframes cloud render`, backed by stock `hyperframes render` on a Mac. It includes the queue, signed transfers, filesystem isolation, restart recovery, result cleanup and a local dashboard. No upstream CLI source or personal production data is included.
 
-Reference client: HyperFrames 0.8.78. The installed server checks npm's latest release for each job and validates new releases before using them. Future releases can require adapter changes. This is an unsupported, archived reference snapshot for your own use, not a managed service. Fork it if you want to extend it; there is no ongoing maintenance commitment.
+Reference client: HyperFrames 0.8.78. The installed server checks npm's latest release for each job and validates new releases before using them. Future releases can require adapter changes. This is an unsupported reference snapshot for your own use, not a managed service. Fork it if you want to extend it; there is no ongoing maintenance commitment.
 
 Clone the snapshot:
 
